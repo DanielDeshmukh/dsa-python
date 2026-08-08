@@ -210,8 +210,12 @@ tempCodeRunnerFile.py
 CHEATSHEET.md
 START_HERE.md
 
-# Learning files (not for public)
+# Learning files (not for repo)
 week1/
+
+# Personal DSA notes
+dsa-patterns-cheatsheet.md
+dsa-practice-problems.md
 
 # PyPI configuration file
 .pypirc
