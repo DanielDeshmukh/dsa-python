@@ -1,6 +1,14 @@
 # dsa-python
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)
+[![LeetCode Streak](https://img.shields.io/badge/Streak-0-orange?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/deshmukhdaniel/)
+[![GitHub Stars](https://img.shields.io/github/stars/DanielDeshmukh/dsa-python?style=for-the-badge)](https://github.com/DanielDeshmukh/dsa-python)
+[![GitHub Forks](https://img.shields.io/github/forks/DanielDeshmukh/dsa-python?style=for-the-badge)](https://github.com/DanielDeshmukh/dsa-python)
+
 **Author:** [Daniel Deshmukh](https://leetcode.com/u/deshmukhdaniel/)
+
+---
 
 ## LeetCode Profile
 
@@ -14,3 +22,53 @@
 ## Goal
 
 Learn DSA patterns in Python first, then translate to Java once a pattern clicks. Organized by the 15 core patterns — not by problem number.
+
+---
+
+## Rules
+
+1. Learn the **logic** in Python (fast to write, less boilerplate). Once a pattern clicks, redo 2-3 problems of that same pattern in Java.
+2. Every problem you solve, ask **"what pattern is this?"** before you code. That's the actual skill interviewers test.
+
+---
+
+## Progress
+
+| # | Pattern | Folder | Solved |
+|---|---------|--------|--------|
+| 1 | Two Pointers | [`two-pointers/`](two-pointers/) | 0 |
+| 2 | Sliding Window | [`sliding-window/`](sliding-window/) | 0 |
+| 3 | Fast & Slow Pointers | [`fast-slow-pointers/`](fast-slow-pointers/) | 0 |
+| 4 | Merge Intervals | [`merge-intervals/`](merge-intervals/) | 0 |
+| 5 | Binary Search | [`binary-search/`](binary-search/) | 0 |
+| 6 | Hashing / Frequency | [`hashing/`](hashing/) | 0 |
+| 7 | Stack-based | [`stack/`](stack/) | 0 |
+| 8 | BFS | [`bfs/`](bfs/) | 0 |
+| 9 | DFS / Backtracking | [`dfs-backtracking/`](dfs-backtracking/) | 0 |
+| 10 | Tree Traversal | [`tree-traversal/`](tree-traversal/) | 0 |
+| 11 | Union-Find | [`union-find/`](union-find/) | 0 |
+| 12 | Top-K / Heap | [`top-k-heap/`](top-k-heap/) | 0 |
+| 13 | DP (1D) | [`dp-1d/`](dp-1d/) | 0 |
+| 14 | DP (2D) | [`dp-2d/`](dp-2d/) | 0 |
+| 15 | Prefix Sum | [`prefix-sum/`](prefix-sum/) | 0 |
+
+---
+
+## Weekly Roadmap
+
+| Week | Focus |
+|---|---|
+| 1 | Syntax + core DS (Phase 0-1) |
+| 2 | Two pointers, sliding window, binary search, hashing |
+| 3 | Stack, BFS/DFS, backtracking, tree traversal |
+| 4 | Union-Find, heaps, start DP |
+| 5 | DP deep dive (1D → 2D), prefix sums |
+| 6 | Mixed problem sets, timed mocks, redo weak patterns |
+
+---
+
+## Resources
+
+- [NeetCode 150](https://neetcode.io/roadmap) — curated problems grouped by pattern
+- [LeetCode](https://leetcode.com/) — filter by company tags
+- [Grokking the Coding Interview](https://www.designgurus.io/course/grokking-the-coding-interview) — patterns course
