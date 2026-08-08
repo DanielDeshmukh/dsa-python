@@ -4,7 +4,7 @@
   <a href="https://leetcode.com/u/deshmukhdaniel/">
     <img src="https://img.shields.io/badge/LeetCode-deshmukhdaniel-orange?style=flat&logo=leetcode" alt="LeetCode">
   </a>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
   <a href="https://github.com/DanielDeshmukh/dsa-python">
     <img src="https://img.shields.io/github/last-commit/DanielDeshmukh/dsa-python?style=flat" alt="Last Commit">
   </a>
