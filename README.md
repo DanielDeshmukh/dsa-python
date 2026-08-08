@@ -1,10 +1,22 @@
 # dsa-python
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)
-[![LeetCode Streak](https://img.shields.io/badge/Streak-0-orange?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/deshmukhdaniel/)
-[![GitHub Stars](https://img.shields.io/github/stars/DanielDeshmukh/dsa-python?style=for-the-badge)](https://github.com/DanielDeshmukh/dsa-python)
-[![GitHub Forks](https://img.shields.io/github/forks/DanielDeshmukh/dsa-python?style=for-the-badge)](https://github.com/DanielDeshmukh/dsa-python)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=white" alt="LeetCode">
+  <img src="https://img.shields.io/badge/Problems-3-blue?style=flat-square" alt="Problems Solved">
+  <a href="https://leetcode.com/u/deshmukhdaniel/">
+    <img src="https://img.shields.io/badge/Streak-0-orange?style=flat-square&logo=leetcode&logoColor=white" alt="LeetCode Streak">
+  </a>
+  <a href="https://github.com/DanielDeshmukh/dsa-python">
+    <img src="https://img.shields.io/github/stars/DanielDeshmukh/dsa-python?style=flat-square&color=yellow" alt="Stars">
+  </a>
+  <a href="https://github.com/DanielDeshmukh/dsa-python">
+    <img src="https://img.shields.io/github/forks/DanielDeshmukh/dsa-python?style=flat-square" alt="Forks">
+  </a>
+  <a href="https://github.com/DanielDeshmukh/dsa-python">
+    <img src="https://img.shields.io/github/issues/DanielDeshmukh/dsa-python?style=flat-square" alt="Issues">
+  </a>
+</p>
 
 **Author:** [Daniel Deshmukh](https://leetcode.com/u/deshmukhdaniel/)
 
