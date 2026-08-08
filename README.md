@@ -20,7 +20,7 @@
 |---|---|
 | Username | `deshmukhdaniel` |
 | Profile | [leetcode.com/u/deshmukhdaniel](https://leetcode.com/u/deshmukhdaniel/) |
-| Languages | Python (2 solved), C++ (1 solved) |
+| Languages | Python (0 solved), C++ (0 solved) |
 | Skills | Array, Two Pointers, String, Hash Table, Binary Search |
 
 ## Goal
