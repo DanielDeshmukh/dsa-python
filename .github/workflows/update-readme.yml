@@ -89,15 +89,7 @@ jobs:
           with open('README.md', 'r') as f:
               content = f.read()
 
-          # Update Languages line in LeetCode Profile table
-          lang_line = f"| Languages | Python ({total_py} solved), C++ ({total_cpp} solved) |"
-          content = re.sub(
-              r'\| Languages \| Python \(\d+ solved\), C\+\+ \(\d+ solved\) \|',
-              lang_line,
-              content
-          )
-
-          # Update Progress table
+          # Update Progress table (DO NOT touch Languages line - that's LeetCode stats)
           for folder, count in counts.items():
               # Match pattern like: | 1 | Two Pointers | [`two-pointers/`](two-pointers/) | 0 |
               pattern = rf'(\|\s*\d+\s*\|\s*[^|]+\|\s*\[`{re.escape(folder)}/`\]\([^)]+\)\s*\|\s*)\d+(\s*\|)'
@@ -108,7 +100,7 @@ jobs:
           with open('README.md', 'w') as f:
               f.write(content)
 
-          print(f"README updated! Python: {total_py}, C++: {total_cpp}")
+          print(f"README updated! Total problems: {sum(counts.values())}")
           PYTHON_SCRIPT
 
           # Run the update script
