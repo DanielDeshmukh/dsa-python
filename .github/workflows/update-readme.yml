@@ -1,0 +1,123 @@
+name: Update README Progress
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Count problems and update README
+        run: |
+          # Define pattern folders
+          folders=(
+            "two-pointers"
+            "sliding-window"
+            "fast-slow-pointers"
+            "merge-intervals"
+            "binary-search"
+            "hashing"
+            "stack"
+            "bfs"
+            "dfs-backtracking"
+            "tree-traversal"
+            "union-find"
+            "top-k-heap"
+            "dp-1d"
+            "dp-2d"
+            "prefix-sum"
+          )
+
+          # Count problems in each folder
+          echo "Counting problems..."
+          for folder in "${folders[@]}"; do
+            if [ -d "$folder" ]; then
+              count=$(find "$folder" -name "*.py" -o -name "*.cpp" | wc -l)
+              echo "$folder: $count"
+            fi
+          done
+
+          # Count total
+          total_py=$(find . -maxdepth 2 -name "*.py" ! -name "update_readme.py" ! -path "./.github/*" | wc -l)
+          total_cpp=$(find . -maxdepth 2 -name "*.cpp" | wc -l)
+          echo "Total Python: $total_py"
+          echo "Total C++: $total_cpp"
+
+          # Create Python script to update README
+          cat > update_readme.py << 'PYTHON_SCRIPT'
+          import os
+          import re
+
+          # Pattern folders
+          folders = [
+              "two-pointers", "sliding-window", "fast-slow-pointers",
+              "merge-intervals", "binary-search", "hashing", "stack",
+              "bfs", "dfs-backtracking", "tree-traversal", "union-find",
+              "top-k-heap", "dp-1d", "dp-2d", "prefix-sum"
+          ]
+
+          # Count problems
+          counts = {}
+          for folder in folders:
+              if os.path.exists(folder):
+                  py_count = len([f for f in os.listdir(folder) if f.endswith('.py')])
+                  cpp_count = len([f for f in os.listdir(folder) if f.endswith('.cpp')])
+                  counts[folder] = py_count + cpp_count
+              else:
+                  counts[folder] = 0
+
+          # Count totals
+          total_py = 0
+          total_cpp = 0
+          for folder in folders:
+              if os.path.exists(folder):
+                  for f in os.listdir(folder):
+                      if f.endswith('.py'):
+                          total_py += 1
+                      elif f.endswith('.cpp'):
+                          total_cpp += 1
+
+          # Read README
+          with open('README.md', 'r') as f:
+              content = f.read()
+
+          # Update Languages line in LeetCode Profile table
+          lang_line = f"| Languages | Python ({total_py} solved), C++ ({total_cpp} solved) |"
+          content = re.sub(
+              r'\| Languages \| Python \(\d+ solved\), C\+\+ \(\d+ solved\) \|',
+              lang_line,
+              content
+          )
+
+          # Update Progress table
+          for folder, count in counts.items():
+              # Match pattern like: | 1 | Two Pointers | [`two-pointers/`](two-pointers/) | 0 |
+              pattern = rf'(\|\s*\d+\s*\|\s*[^|]+\|\s*\[`{re.escape(folder)}/`\]\([^)]+\)\s*\|\s*)\d+(\s*\|)'
+              replacement = rf'\g<1>{count}\g<2>'
+              content = re.sub(pattern, replacement, content)
+
+          # Write README
+          with open('README.md', 'w') as f:
+              f.write(content)
+
+          print(f"README updated! Python: {total_py}, C++: {total_cpp}")
+          PYTHON_SCRIPT
+
+          # Run the update script
+          python update_readme.py
+
+      - name: Commit updated README
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "chore: update progress counts [skip ci]"
+          git push

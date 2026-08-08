@@ -1,0 +1,104 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.py'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.py'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Find and run Python tests
+        run: |
+          echo "🔍 Finding Python files with tests..."
+          echo ""
+          
+          passed=0
+          failed=0
+          files_checked=0
+          
+          # Find all Python files in pattern folders
+          for folder in two-pointers sliding-window fast-slow-pointers merge-intervals \
+                        binary-search hashing stack bfs dfs-backtracking tree-traversal \
+                        union-find top-k-heap dp-1d dp-2d prefix-sum; do
+            if [ -d "$folder" ]; then
+              for file in "$folder"/*.py; do
+                if [ -f "$file" ]; then
+                  files_checked=$((files_checked + 1))
+                  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                  echo "📄 Testing: $file"
+                  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                  
+                  # Check if file has run_tests function
+                  if grep -q "def run_tests" "$file"; then
+                    if python "$file" 2>&1; then
+                      echo "✅ PASS: $file"
+                      passed=$((passed + 1))
+                    else
+                      echo "❌ FAIL: $file"
+                      failed=$((failed + 1))
+                    fi
+                  else
+                    # No tests, just check if it runs without errors
+                    if python -c "import py_compile; py_compile.compile('$file', doraise=True)" 2>&1; then
+                      echo "✅ SYNTAX OK: $file (no tests defined)"
+                      passed=$((passed + 1))
+                    else
+                      echo "❌ SYNTAX ERROR: $file"
+                      failed=$((failed + 1))
+                    fi
+                  fi
+                  echo ""
+                fi
+              done
+            fi
+          done
+          
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 SUMMARY"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Files checked: $files_checked"
+          echo "Passed: $passed"
+          echo "Failed: $failed"
+          echo ""
+          
+          if [ $failed -gt 0 ]; then
+            echo "❌ Some tests failed!"
+            exit 1
+          else
+            echo "✅ All tests passed!"
+          fi
+
+      - name: Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const output = `## 🧪 Test Results
+            
+            All tests passed! ✅
+            
+            Checked at: ${new Date().toISOString()}`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
