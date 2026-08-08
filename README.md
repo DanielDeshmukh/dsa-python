@@ -44,17 +44,22 @@ Learn DSA patterns in Python first, then translate to Java once a pattern clicks
 | 2 | Sliding Window | [`sliding-window/`](sliding-window/) | 0 |
 | 3 | Fast & Slow Pointers | [`fast-slow-pointers/`](fast-slow-pointers/) | 0 |
 | 4 | Merge Intervals | [`merge-intervals/`](merge-intervals/) | 0 |
-| 5 | Binary Search | [`binary-search/`](binary-search/) | 0 |
-| 6 | Hashing / Frequency | [`hashing/`](hashing/) | 0 |
-| 7 | Stack-based | [`stack/`](stack/) | 0 |
-| 8 | BFS | [`bfs/`](bfs/) | 0 |
-| 9 | DFS / Backtracking | [`dfs-backtracking/`](dfs-backtracking/) | 0 |
-| 10 | Tree Traversal | [`tree-traversal/`](tree-traversal/) | 0 |
-| 11 | Union-Find | [`union-find/`](union-find/) | 0 |
-| 12 | Top-K / Heap | [`top-k-heap/`](top-k-heap/) | 0 |
-| 13 | DP (1D) | [`dp-1d/`](dp-1d/) | 0 |
-| 14 | DP (2D) | [`dp-2d/`](dp-2d/) | 0 |
-| 15 | Prefix Sum | [`prefix-sum/`](prefix-sum/) | 0 |
+| 5 | Cyclic Sort | [`cyclic-sort/`](cyclic-sort/) | 0 |
+| 6 | Linked List Reversal | [`linked-list-reversal/`](linked-list-reversal/) | 0 |
+| 7 | BFS | [`bfs/`](bfs/) | 0 |
+| 8 | DFS | [`dfs-backtracking/`](dfs-backtracking/) | 0 |
+| 9 | Two Heaps | [`top-k-heap/`](top-k-heap/) | 0 |
+| 10 | Backtracking | [`dfs-backtracking/`](dfs-backtracking/) | 0 |
+| 11 | Modified Binary Search | [`binary-search/`](binary-search/) | 0 |
+| 12 | Top K Elements | [`top-k-heap/`](top-k-heap/) | 0 |
+| 13 | K-way Merge | [`k-way-merge/`](k-way-merge/) | 0 |
+| 14 | DP (Knapsack) | [`dp-2d/`](dp-2d/) | 0 |
+| 15 | DP (Fibonacci) | [`dp-1d/`](dp-1d/) | 0 |
+| 16 | Greedy | [`greedy/`](greedy/) | 0 |
+| 17 | Topological Sort | [`topological-sort/`](topological-sort/) | 0 |
+| 18 | Trie | [`trie/`](trie/) | 0 |
+| 19 | Union-Find | [`union-find/`](union-find/) | 0 |
+| 20 | Monotonic Stack | [`monotonic-stack/`](monotonic-stack/) | 0 |
 
 ---
 

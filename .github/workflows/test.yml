@@ -35,8 +35,9 @@ jobs:
           
           # Find all Python files in pattern folders
           for folder in two-pointers sliding-window fast-slow-pointers merge-intervals \
-                        binary-search hashing stack bfs dfs-backtracking tree-traversal \
-                        union-find top-k-heap dp-1d dp-2d prefix-sum; do
+                        cyclic-sort linked-list-reversal bfs dfs-backtracking top-k-heap \
+                        binary-search k-way-merge dp-2d dp-1d greedy topological-sort \
+                        trie union-find monotonic-stack; do
             if [ -d "$folder" ]; then
               for file in "$folder"/*.py; do
                 if [ -f "$file" ]; then
