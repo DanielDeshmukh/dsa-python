@@ -217,6 +217,12 @@ week1/
 dsa-patterns-cheatsheet.md
 dsa-practice-problems.md
 
+# Python starters guide
+PYTHON_STARTERS_GUIDE.md
+
+# Playground (testing code)
+playground/
+
 # PyPI configuration file
 .pypirc
 
